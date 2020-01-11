@@ -1,8 +1,11 @@
 language: java
 script:
-- mvn install
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=phyzicsz_sonartest
 jdk:
 - openjdk11
+addons:
+  sonarcloud:
+    organization: "phyzicsz"
 env:
   global:
     secure: lOg5ZujT6T9/CW4MTMeoVM7NQRebGKJGFsHMB48aFytI3/mNhrkk50Sk/CIrEZfhwtn3AmzNuCInILRoA6AYwhWC4D9JPHhdxSfsAidgjmHRjd7rW4Y1k080VFq+STjvyjdnxndO126M1kSc5Eh0mZe9+/UL7cw8a8pHjtz60EmYddSqRhriNR7UouPbPHwfYnPNvj3Rjax5KbF/AlJiPPkawlpCnhi6I1fvCzezp07x7gf48Y5cCIJiLpzjQwftkwU/tFKElts0o9iWhNCnRiRAVFSJIYe48O0hiOkMywtdWTKe0J5lwGTsA84A5nF8WrpbU9Kn5ysmlE1eHd+UXEfejCQQdJGxhjggVb/t37GdzCWyG6Tf6ozJesiBGQd6KV6fOLlXUbJVAuBF/nvzbTTRCU/kvED08sqNR7xQWi4Z9PhF7U3SnupCgEz1PuFUxNk6vodVcpNnWIJ85Jmk2xtzPjfbnjfAEsI7KLExLd42e1v+uz/1O4yMf9HoLO5j6/Ypnd4E7oU5U0py4WuMVtkHsX7dE5nxFB9o3gOkceefWBa+2Clvk+TeRxEBmP5deeCTqgciPdqfsu3fSXjicKcyS5XiJtoWdvYt3kJ4Exb2FkGNwO0w/tAEkeI0O/9J3UO40kdhmmc49wX68XztvMaRBmUrTYygqTZu7GTyJtM=
