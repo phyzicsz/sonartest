@@ -7,7 +7,22 @@
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <java.release.version>11</java.release.version>
+                
+        <!-- maven build dependancies -->
+        <maven.plugin.compiler.version>3.8.1</maven.plugin.compiler.version>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.plugin.compiler.version}</version>
+                <configuration>
+                    <release>${java.release.version}</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
